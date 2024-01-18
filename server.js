@@ -17,16 +17,23 @@ app.get("/",(req,res) => {
     res.render('pages/periodicTable')
 })
 
+//placeholder for credits page
 app.get("/credits", (req,res) => {
  res.send("creidte")
 })
 
+//dynamic routing for elements
 app.get("/elementi/:elementId", (req,res) => { 
     if (elementsJson.hasOwnProperty(req.params.elementId)) {
         res.render('pages/elementTemplate', {elementId: req.params.elementId, symbol: elementsJson[req.params.elementId]})
     } else {
-        res.send("doesnt exist")
+        res.status(404).send("element ne postoji")
     }
+})
+
+//handle 404?
+app.get("*", (req,res) => {
+ res.status(404).send("Ne postoji")
 })
 
 app.listen(port, ()=>{
