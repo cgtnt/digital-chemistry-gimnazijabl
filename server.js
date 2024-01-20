@@ -25,7 +25,7 @@ app.get("/credits", (req,res) => {
 //dynamic routing for elements
 app.get("/elementi/:elementId", (req,res) => { 
     if (elementsJson.hasOwnProperty(req.params.elementId)) {
-        res.render('pages/elementTemplate', {elementId: req.params.elementId, symbol: elementsJson[req.params.elementId]})
+        res.render('pages/elementTemplate', {elementId: req.params.elementId, symbol: elementsJson[req.params.elementId], imgPath: `images/${req.params.elementId}.jpg`})
     } else {
         res.status(404).send("element ne postoji")
     }

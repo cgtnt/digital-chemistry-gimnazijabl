@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/goToSection.js"></script>
 </head>
+
 <body>
-    <h1><%= symbol %></h1>
-    <!-- paste the following line in the blue template area container from the schematics  -->
-    <%- include(`../elementProperties/${elementId}.html`)  %>
-</body>
+    <div class="element-image-wrapper">
+        <section class="hero-section">
+            <div class="hero-section-wrapper">
+
+
+                <div class="color-background">
+                    <div class="element-wrapper">
+                        <h1 class="element-label" title="placeholder"><%= symbol %></h1>
+                        <p class="element-name" title="placeholder"><%= elementId %></p>
+                    </div>
+                </div>
+                <div class="img-wrapper">
+                    <img  class="element-img" src='<%= imgPath %>'/>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="button-section">
+            <div class="button-section-wrapper">
+                <button class="button physical-properties" onclick="goToSection('phys-prop')">Fizička svojstva</button>
+                <button class="button chemical-properties" onclick="goToSection('chem-prop')">Hemijska svojstva</button>
+                <button class="button element-usage" onclick="goToSection('el-usage')">Upotreba</button>
+                <button class="button element-reactions" onclick="goToSection('el-react')">Reakcije</button>
+
+            </div>
+        </section>
+    </div>
+    <div class="element-properties-wrapper">
+        <%- include(`../elementProperties/${elementId}.html`) %>
+    </div>
+
 </html>
