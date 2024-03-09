@@ -14,20 +14,23 @@
         <section class="hero-section">
             <div class="hero-section-wrapper">
 
-
                 <div class="color-background">
                     <div class="element-wrapper">
-                        <h1 class="element-label" title="placeholder"><%= symbol %></h1>
-                        <p class="element-name" title="placeholder"><%= elementId %></p>
+                        <h1 class="element-label" title="placeholder">
+                            <%= symbol %>
+                        </h1>
+                        <p class="element-name" title="placeholder">
+                            <%= elementId %>
+                        </p>
                     </div>
                 </div>
+
                 <div class="img-wrapper">
-                    <img  class="element-img" src='<%= imgPath %>'/>
+                    <img class="element-img" src='<%= imgPath %>' />
                 </div>
 
             </div>
         </section>
-
 
         <section class="button-section">
             <div class="button-section-wrapper">
@@ -39,6 +42,7 @@
             </div>
         </section>
     </div>
+
     <div class="element-properties-wrapper">
         <%- include(`../elementProperties/${elementId}.html`) %>
     </div>
