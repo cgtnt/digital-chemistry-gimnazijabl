@@ -17,10 +17,8 @@ app.get("/",(req,res) => {
     res.render('pages/periodicTable')
 })
 
-//placeholder for credits page
-app.get("/credits", (req,res) => {
- res.send("creidte")
-})
+//add route for credits page here
+
 
 //dynamic routing for elements
 app.get("/elementi/:elementId", (req,res) => { 
